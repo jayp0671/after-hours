@@ -43,7 +43,7 @@ const Home = () => {
       </div>
 
       {/* AUDIO ELEMENT */}
-      <audio ref={audioRef} src="/afterhours.mp3" loop />
+      <audio ref={audioRef} src={`${process.env.PUBLIC_URL}/afterhours.mp3`} loop />
 
       {/* START OVERLAY */}
       {!started && (
