@@ -1,0 +1,21 @@
+:root {
+  --xo-red: #B30000;
+  --xo-red-bright: #ff0000;
+  --xo-black: #000000;
+  --xo-white: #ffffff;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--xo-black);
+  color: var(--xo-white);
+  font-family: 'Cinzel', serif;
+  overflow-x: hidden;
+}
+
+body {
+  line-height: 1.6;
+}

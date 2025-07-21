@@ -1,0 +1,176 @@
+/* XO COLORS */
+:root {
+  --xo-red: #B30000;
+  --xo-red-bright: #ff0000;
+  --xo-black: #000000;
+  --xo-white: #ffffff;
+}
+
+/* BASE */
+body {
+  margin: 0;
+  font-family: 'Cinzel', serif;
+  background-color: var(--xo-black);
+  color: var(--xo-white);
+}
+
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* background: url('/afterhours.jpg') no-repeat center center fixed; */
+  background: url('../styles/afterhours_copy.jpg') no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.4); /* dim video so text pops */
+}
+
+
+/* HEADER BAR */
+.header-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid var(--xo-red);
+  z-index: 5;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  color: var(--xo-red);
+  text-shadow: 0 0 12px var(--xo-red), 0 0 20px var(--xo-red-bright);
+  animation: flickerLogo 2s infinite alternate;
+  margin: 0;
+}
+
+.nav-links a {
+  position: relative;
+  margin-left: 25px;
+  color: var(--xo-white);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--xo-red-bright);
+  box-shadow: 0 0 8px var(--xo-red-bright);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--xo-red-bright);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* START BUTTON OVERLAY */
+.start-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.88);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+}
+
+.start-button {
+  font-size: 1.5rem;
+  padding: 20px 40px;
+  background-color: var(--xo-red);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 15px var(--xo-red);
+  transition: 0.3s ease;
+}
+
+.start-button:hover {
+  background-color: var(--xo-red-bright);
+  box-shadow: 0 0 25px var(--xo-red-bright);
+}
+
+/* HERO TEXT */
+.hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 50px;
+  border-radius: 20px;
+  text-align: center;
+  z-index: 3;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-title {
+  font-family: 'Cinzel', serif;
+  font-size: 4rem;
+  color: var(--xo-red);
+  text-shadow: 0 0 15px var(--xo-red);
+  animation: flicker 2s infinite alternate;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--xo-white);
+  margin-top: 20px;
+  opacity: 0.95;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+    text-shadow: 0 0 10px var(--xo-red);
+  }
+  100% {
+    opacity: 0.8;
+    text-shadow: 0 0 20px var(--xo-red-bright);
+  }
+}

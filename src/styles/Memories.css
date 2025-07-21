@@ -1,0 +1,76 @@
+:root {
+  --xo-red: #B30000;
+  --xo-red-bright: #ff0000;
+  --xo-black: #000000;
+  --xo-white: #ffffff;
+}
+
+.memories-page {
+  padding-top: 120px;
+  padding-bottom: 60px;
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+  width: 100%;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+
+.memories-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Title + Subtitle */
+.memories-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.5rem;
+  color: var(--xo-red);
+  margin-bottom: 10px;
+  animation: flicker 2s infinite alternate;
+  text-align: center;
+}
+
+.memories-sub {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Grid */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.photo-grid img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px var(--xo-red);
+  object-fit: cover;
+}
+
+/* Videos */
+.video-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.video-section video {
+  width: 320px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px var(--xo-red-bright);
+}
+
+/* Flicker Animation */
+@keyframes flicker {
+  0% { opacity: 1; text-shadow: 0 0 10px var(--xo-red); }
+  100% { opacity: 0.8; text-shadow: 0 0 20px var(--xo-red-bright); }
+}
